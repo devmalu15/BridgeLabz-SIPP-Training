@@ -7,5 +7,6 @@ public class Add2Numbers {
         int input2 = scanner.nextInt();
         int sum = input1 + input2;
         System.out.println(sum);
+        scanner.close();
     }
 }
