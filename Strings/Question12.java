@@ -1,18 +1,21 @@
 import java.util.*;
-
-public class Question12 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String sentence = sc.nextLine();
-        String oldWord = sc.nextLine();
-        String newWord = sc.nextLine();
-        String result = "";
-        String[] words = sentence.split(" ");
-        for (int i = 0; i < words.length; i++) {
-            if (words[i].equals(oldWord))
-                words[i] = newWord;
-            result += words[i] + " ";
+public class Question12{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        System.out.println("Length of string without using Inbuilt: "+ userdefined(str));
+        System.out.println("Length of string with using Inbuilt: "+ str.length());
+    }
+    public static int userdefined(String str){
+        int count=0;
+        try{
+            while(true){
+                str.charAt(count);
+                count++;
+            }
         }
-        System.out.println(result.trim());
+        catch(StringIndexOutOfBoundsException e){
+        }
+        return count;
     }
 }
