@@ -1,0 +1,58 @@
+Class Diagram :-
+
++------------------+
+ |     Customer     |
+ +------------------+
+ | -name: String    |
+ | -products: List<Product> |
+ +------------------+
+ | +addProduct(p: Product) |
+ | +getProducts(): List<Product> |
+ +------------------+
+
+ +------------------+
+ |      Product     |
+ +------------------+
+ | -name: String    |
+ | -quantity: double |
+ | -pricePerUnit: double |
+ +------------------+
+ | +getName(): String     |
+ | +getQuantity(): double |
+ | +getPricePerUnit(): double |
+ +------------------+
+
+ +-----------------------------+
+ |       BillGenerator         |
+ +-----------------------------+
+ | +calculateTotal(c: Customer): double |
+ +-----------------------------+
+
+
+Object Diagram :-
+
+Customer: Alice
+----------------------
+name = "Alice"
+products = [Apples, Milk]
+
+Product1:
+name = "Apples"
+quantity = 2 kg
+pricePerUnit = $3
+
+Product2:
+name = "Milk"
+quantity = 1 liter
+pricePerUnit = $2
+
+
+Sequence Diagram :- 
+
+Customer                     BillGenerator
+    |                                 |
+    | ---- requests total bill -----> |
+    |                                 |
+    |                           fetches products
+    |                           calculates total
+    | <-- returns total cost ------- |
