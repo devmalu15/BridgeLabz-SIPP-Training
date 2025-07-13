@@ -1,4 +1,3 @@
-
 public class BinaryTree {
 	TreeNode root; 
 	
@@ -7,7 +6,7 @@ public class BinaryTree {
 	}
 	
 	
-	public void display(Treenode node) {
+	public void display() {
 		TreeNode node = root;
 		if(node == null) {
 			System.out.println("empty tree!");
