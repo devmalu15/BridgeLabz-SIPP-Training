@@ -264,7 +264,7 @@ public class Implementation implements IAssignment{
                             	studentsByCourses();
                                 break;
                             case 8:
-                                // displayStudentsByInstructors();
+                                studentsByInstructors();
                                 break;
                             case 9:
                                 break;
