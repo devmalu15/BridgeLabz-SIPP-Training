@@ -1,0 +1,123 @@
+Class Pet
+	name (String)
+	age (int)
+
+Constructor
+	Pet(name, age)
+	
+-------------------------------------------------------------------
+	
+Class Dog inherits from Pet
+	breed (String)	
+
+Constructor
+	Dog(name, age, breed):
+	super(name, age)
+
+-------------------------------------------------------------------
+
+Class Cat inherits from Pet
+	isIndoor (boolean)
+
+Constructor
+	Cat(name, age, isIndoor):
+	super(name, age)
+
+-------------------------------------------------------------------
+
+Class Bird inherits from Pet
+	canFly (boolean)
+
+Constructor
+	Bird(name, age, canFly)
+	Calls super(name, age)
+	
+-------------------------------------------------------------------
+
+Library Membership Tracker
+Class Member
+	name (String)
+	id (int)
+	membershipDate (Date/String)
+	validityPeriod (int)
+
+Constructor
+	Member(name, id, membershipDate, validityPeriod)
+
+Method checkValidity()
+	currentDate = get current date.
+	Calculate the expiry date by adding validityPeriod months to membershipDate.
+	if currentDate is before or on expiryDate
+		return true
+	else
+		return false
+
+-----------------------------------------------------------------------------------
+
+Undo Feature in Text Editor
+Stack undoStack: A stack to store a history of text states.
+
+method typeText(newText)
+	Push the currentText onto undoStack.
+	currentText = newText.
+
+method undo():
+	if undoStack is not empty
+		currentText = Pop the top element from undoStack
+		return currentText.
+	else
+		return an error message "No more undo available"
+
+-----------------------------------------------------------------------------------
+
+Call Center Queue Management
+Queue normalQueue: A queue for normal calls.
+Queue emergencyQueue: A queue for emergency calls.
+
+method addCall(customer, priority)
+	if priority is "emergency"
+		enqueue customer to emergencyQueue
+	else
+		enqueue customer to normalQueue
+
+method getNextCustomer():
+	if emergencyQueue is not empty
+		return Dequeue from emergencyQueue
+	
+	else if normalQueue is not empty
+		return Dequeue from normalQueue
+
+	else
+		return "No customers waiting."
+		
+-----------------------------------------------------------------------------------
+		
+Student Score Storage
+Map scores: A HashMap to store student names and their scores.
+
+method addScore(studentName, score)
+	put studentName and score into the scores map.
+
+method getHighestScorer()
+	Use a stream on the scores map's entry set.
+	Use the max method with a custom comparator to find the entry with the highest value (score).
+	if a max entry is found, get its key (student name)
+		return the name of the highest scorer.
+
+-----------------------------------------------------------------------------------
+
+Employee Record Keeper
+List employees: An ArrayList to store Employee objects.
+
+Class Employee
+	name (String)
+	department (String)
+
+method filterEmployeesByDept(departmentName)
+	Use a stream on the employees list.
+	Use the filter method to keep only employees where the department attribute matches departmentName.
+	Collect the filtered employees into a new list.
+	return the new list of filtered employees
+	
+-----------------------------------------------------------------------------------
+
