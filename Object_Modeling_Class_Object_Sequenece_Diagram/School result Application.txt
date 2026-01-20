@@ -1,0 +1,61 @@
+Class Diagram:-
+
+ +------------------+
+ |     Student      |
+ +------------------+
+ | -name: String    |
+ | -subjects: List<Subject> |
+ +------------------+
+ | +addSubject(s: Subject) |
+ | +getSubjects(): List<Subject> |
+ +------------------+
+
+ +------------------+
+ |     Subject      |
+ +------------------+
+ | -name: String    |
+ | -marks: int      |
+ +------------------+
+ | +getName(): String |
+ | +getMarks(): int |
+ +------------------+
+
+ +-----------------------------+
+ |     GradeCalculator        |
+ +-----------------------------+
+ | +calculateGrade(s: Student): String |
+ +-----------------------------+
+
+Relationships:
+- Student aggregates Subject (Student has multiple subjects).
+- GradeCalculator operates on Student (calculates results for Student).
+
+
+Object Diagram :-
+
+Student: John
+------------------------
+name = "John"
+subjects = [Subject1, Subject2]
+
+Subject1:
+-------------
+name = "Maths"
+marks = 90
+
+Subject2:
+-------------
+name = "Science"
+marks = 85
+
+
+Sequence Diagram :-
+
+Student                      GradeCalculator
+  |                                 |
+  |--- requests grade ------------>|
+  |                                 |
+  |                           fetches subjects
+  |                           computes total marks
+  |                           determines grade
+  |<-- returns calculated grade ----|

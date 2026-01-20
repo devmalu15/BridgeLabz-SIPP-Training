@@ -1,0 +1,32 @@
+class Course
+	title
+	duration
+	price
+	
+	Constructor:
+	Course(title, duration, price)
+	this.title = title
+	this.duration = duration
+	this.price = price
+	
+	
+class Student
+	name
+	list courses
+	
+	Constructor:
+	Student(name)
+	this.name = name
+	list courses
+	
+	
+class EduPrime
+	
+	List showEnrolledCourses(Student student)
+		return student.courses
+	
+	
+	enrollCourse(Student student, Course course)
+		student.courses.add(course)
+	
+	
