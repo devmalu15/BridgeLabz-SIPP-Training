@@ -264,7 +264,11 @@ public class Implementation implements IAssignment{
                             	studentsByCourses();
                                 break;
                             case 8:
+<<<<<<< HEAD
                                 studentsByInstructors();
+=======
+                                // displayStudentsByInstructors();
+>>>>>>> Workshop
                                 break;
                             case 9:
                                 break;
